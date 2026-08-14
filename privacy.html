@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Privacy Policy | Axiom Systems Account Link</title>
+  <title>Privacy Policy | Axiom Systems / Chiral</title>
   <style>
     body { font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; max-width: 42rem; margin: 2.5rem auto; padding: 0 1.25rem 3rem; line-height: 1.65; color: #1a1a1a; }
     h1 { font-size: 1.6rem; line-height: 1.25; margin-bottom: 0.5rem; }
@@ -17,131 +17,177 @@
 </head>
 <body>
   <h1>Privacy Policy</h1>
-  <p class="meta">Last updated: 9 August 2026</p>
+  <p class="meta">Last updated: 14 August 2026</p>
   <p>
-    This Privacy Policy explains how Axiom Systems handles information when you
-    use our Roblox account linking service with Chiral. It is written for people
-    who want a clear picture of what we collect, why we collect it, and what we
-    do with it. It is not a Roblox document. Roblox Corporation is not affiliated
-    with Axiom Systems and is not responsible for this service.
+    This Privacy Policy explains how Axiom Systems handles information when
+    you interact with Chiral, our Discord bot and community membership
+    system. It covers Roblox account linking, membership/rank tracking, and
+    automated anti-abuse moderation. It is written for people who want a
+    clear picture of what we collect, why we collect it, and what we do with
+    it. It is not a Roblox or Discord document — neither company is
+    affiliated with Axiom Systems and neither is responsible for Chiral.
   </p>
 
   <h2>Who we are</h2>
   <p>
-    Axiom Systems runs community tools for our members. Chiral is the service
-    that performs Roblox account linking and related membership checks. When
-    this policy says “we,” “us,” or “Axiom Systems,” it means the operators of
-    those tools.
+    Axiom Systems runs community tools for our members. Chiral is the Discord
+    bot that performs Roblox account linking, membership/rank management, and
+    automated moderation. When this policy says "we," "us," or "Axiom
+    Systems," it means the operators of those tools.
   </p>
 
   <h2>What this service does</h2>
   <p>
-    Account linking lets you prove that you control a Roblox account and connect
-    it to your community identity in Chiral. That link is used for membership
-    verification, access decisions, and moderation that depends on knowing which
-    Roblox account belongs to which person in our community.
+    Account linking lets you prove that you control a Roblox account and
+    connect it to your Discord identity in Chiral. That link is used for
+    membership verification, access decisions, and moderation that depends on
+    knowing which Roblox account belongs to which person in our community.
+    Separately, Chiral also monitors server activity to enforce anti-abuse
+    rules and to keep the membership registry (ranks, standing, and linked
+    identities) accurate over time.
   </p>
 
   <h2>Information we collect</h2>
-  <p>Depending on what you approve during Roblox authorization, we may receive:</p>
+  <p><strong>From Roblox</strong>, depending on what you approve during authorization, we may receive:</p>
   <ul>
     <li>Your Roblox user ID</li>
     <li>Your Roblox username and other public profile fields allowed by the scopes you approve (typically openid and profile)</li>
-    <li>The community account identifier used by Chiral when the link is created</li>
     <li>Basic technical details needed to complete the link, such as the time of verification and whether the process succeeded or failed</li>
   </ul>
   <p>
-    We do not ask Roblox for email, passwords, payment details, private messages,
-    or inventory access for this linking flow. If we ever request additional
-    scopes, we will update this policy and the authorization screen will show
-    what Roblox is asking you to approve.
+    We do not ask Roblox for email, passwords, payment details, private
+    messages, or inventory access for the linking flow. If we ever request
+    additional scopes, we will update this policy and the authorization
+    screen will show what Roblox is asking you to approve. We also
+    periodically check the public Roblox username associated with a linked
+    account (via Roblox's public user-lookup API) to detect username changes;
+    this lookup does not use or require your authorization token.
   </p>
+  <p><strong>From Discord</strong>, as part of normal bot operation in servers where Chiral is added, we may collect or generate:</p>
+  <ul>
+    <li>Your Discord user ID and username, and a history of username changes we detect on your account</li>
+    <li>Your server nickname — which Chiral may set automatically to match your linked Roblox username</li>
+    <li>Membership and moderation records: role/rank history, blacklist or Excommunicado standing, join and leave timestamps, and which invite was used to join, where that information is available to the bot</li>
+    <li>Command usage needed to operate the command you ran (for example, who you targeted with a staff command)</li>
+  </ul>
+  <p><strong>Message content.</strong> Chiral does not read or store message content as a general matter. Two narrow exceptions:</p>
+  <ul>
+    <li>In channels with automated anti-spam protection, recent message metadata and content is kept in a short rolling buffer (currently up to 14 days) so that if an anti-spam trigger fires, Chiral can archive the surrounding context for a security record. Messages that are never involved in a trigger age out of this buffer and are not kept.</li>
+    <li>When an anti-spam enforcement action is actually taken against a member, that member's messages from roughly the preceding 3 days are copied into a permanent security record, so staff can review what led to the action. This record is not automatically deleted.</li>
+    <li>Command-only channels (for example, the account-linking channel): non-command messages are deleted on sight and are not separately stored beyond normal Discord audit purposes.</li>
+  </ul>
 
   <h2>How we use information</h2>
-  <p>We use linked account information to:</p>
+  <p>We use the information above to:</p>
   <ul>
     <li>Confirm ownership of a Roblox account for community membership</li>
-    <li>Show your link status inside Chiral when you ask for it</li>
-    <li>Apply roles or access that depend on a successful link</li>
-    <li>Support moderation, including cases where a Roblox identity is restricted from joining or linking again</li>
-    <li>Keep the service reliable, for example by diagnosing failed authorizations</li>
+    <li>Show your link and membership status inside Chiral when you ask for it</li>
+    <li>Apply or remove roles, ranks, skill recognition, and standing (Excommunicado/Blacklist) that depend on your account and conduct</li>
+    <li>Run the automated re-verification and periodic re-enlistment checks described in the Terms of Service, including sending you a Discord DM when action is needed</li>
+    <li>Detect and act on anti-abuse triggers, including message removal and temporary enforcement actions</li>
+    <li>Support moderation generally, including cases where a Roblox identity is restricted from joining or linking again</li>
+    <li>Keep the service reliable, for example by diagnosing failed authorizations or bot errors</li>
   </ul>
   <p>
-    We do not sell your personal information. We do not use it for advertising.
-    We do not share it with unrelated third parties for their own marketing.
+    We do not sell your personal information. We do not use it for
+    advertising. We do not share it with unrelated third parties for their own
+    marketing.
+  </p>
+
+  <h2>Automated decisions</h2>
+  <p>
+    Some actions Chiral takes are fully automated rather than reviewed
+    individually by a person before they happen: nickname changes on link,
+    re-verification and enlistment reminders and lapses, and anti-spam
+    enforcement (message deletion, temporary ban-then-unban, and role
+    removal). Each of these is described in the Terms of Service. Staff can
+    review and, where appropriate, reverse the standing effects of an
+    automated action after the fact.
   </p>
 
   <h2>Legal bases and consent</h2>
   <p>
-    Linking is optional. You choose to start it, and you approve the Roblox
-    authorization prompt yourself. If you do not want your Roblox identity
-    connected to Chiral, do not complete the link. You can remove an existing
-    link later through Chiral’s unlink command, subject to community rules that
-    may still apply to past moderation records.
+    Roblox account linking is optional. You choose to start it, and you
+    approve the Roblox authorization prompt yourself. If you do not want your
+    Roblox identity connected to Chiral, do not complete the link. Remaining a
+    member of a Discord server where Chiral operates means the anti-abuse
+    monitoring and command-channel enforcement described above apply to you
+    regardless of whether you have linked an account. You can remove an
+    existing Roblox link later through Chiral's unlink command, subject to
+    community rules that may still apply to past moderation records.
   </p>
 
   <h2>Sharing</h2>
   <p>
     We share information only when needed to operate the service. That mainly
     means processing authorization with Roblox according to the scopes you
-    approve, and storing the resulting link in Axiom Systems systems used by
-    Chiral. We may also disclose information if required by law, or if needed to
-    protect the safety and integrity of the community against abuse.
+    approve, querying Roblox's public API to detect username changes, and
+    storing the resulting records in Axiom Systems systems used by Chiral. We
+    may also disclose information if required by law, or if needed to protect
+    the safety and integrity of the community against abuse.
   </p>
   <p>
-    Community staff with a legitimate need may see linked Roblox identifiers
-    while handling membership or moderation. They are expected to treat that
-    information as confidential community operations data.
+    Community staff with a legitimate need may see linked Roblox identifiers,
+    membership/rank history, and moderation records (including archived
+    messages tied to an anti-spam action) while handling membership or
+    moderation. They are expected to treat that information as confidential
+    community operations data.
   </p>
 
   <h2>Storage and retention</h2>
+  <p>We keep different records for different lengths of time, depending on why they exist:</p>
+  <ul>
+    <li><strong>Active link and membership records</strong> — kept for as long as the link remains active, and for as long as we reasonably need related records for moderation, security, or dispute handling. If you unlink, we remove the active link from Chiral's live membership data.</li>
+    <li><strong>Identity history</strong> (a log of username changes we detect on either platform) — kept indefinitely as an audit trail, even across relinks, so we can trace an identity's history if needed for moderation.</li>
+    <li><strong>Rolling anti-spam buffer</strong> — currently up to 14 days, then automatically discarded unless it was archived under an enforcement action.</li>
+    <li><strong>Anti-spam enforcement archives</strong> (messages and event records tied to an actual enforcement action) — kept permanently as a security record and are not automatically pruned.</li>
+    <li><strong>Blacklist and Excommunicado records</strong> — kept indefinitely, since they exist specifically to persist across relinks, account switches, and rejoins.</li>
+  </ul>
   <p>
-    Linked account records are stored by Axiom Systems for as long as the link
-    remains active, and for as long as we reasonably need related records for
-    moderation, security, or dispute handling. If you unlink your account, we
-    remove the active link from Chiral’s live membership data. Some historical
-    moderation or security notes may remain where they are needed to enforce
-    bans, investigate abuse, or keep an accurate record of actions already taken.
+    Some historical moderation or security notes may remain even after you
+    unlink or leave, where they are needed to enforce bans, investigate abuse,
+    or keep an accurate record of actions already taken.
   </p>
 
   <h2>Security</h2>
   <p>
-    We take practical steps to protect linked account data, including limiting
-    access to people who need it for operations and keeping secrets such as
-    application credentials out of public places. No online service is perfectly
-    secure. If you believe your Roblox account or community account was
-    compromised, contact community staff promptly and secure both accounts.
+    We take practical steps to protect the data described above, including
+    limiting access to people who need it for operations and keeping secrets
+    such as application credentials out of public places. No online service
+    is perfectly secure. If you believe your Roblox account or Discord account
+    was compromised, contact community staff promptly and secure both
+    accounts.
   </p>
 
   <h2>Children and age</h2>
   <p>
-    This service is intended for people who are allowed to use Roblox and our
-    community platforms under those platforms’ age rules. If you are not old
-    enough to use those services, do not use account linking.
+    This service is intended for people who are allowed to use Roblox and
+    Discord under those platforms' age rules. If you are not old enough to
+    use those services, do not use Chiral.
   </p>
 
   <h2>Your choices</h2>
   <p>You can:</p>
   <ul>
     <li>Decline Roblox authorization and leave your accounts unlinked</li>
-    <li>Check your current link status in Chiral</li>
+    <li>Check your current link and membership status in Chiral</li>
     <li>Unlink your Roblox account through Chiral when that option is available</li>
-    <li>Contact community staff to ask what we hold about your link or to request removal where we can do so without breaking required moderation records</li>
+    <li>Contact community staff to ask what we hold about your account or to request removal where we can do so without breaking required moderation or security records</li>
   </ul>
 
   <h2>Changes to this policy</h2>
   <p>
-    We may update this Privacy Policy as Chiral or our linking process changes.
-    When we do, we will revise the “Last updated” date on this page. Continued
-    use of account linking after an update means you are using the service under
-    the revised policy.
+    We may update this Privacy Policy as Chiral or its features change. When
+    we do, we will revise the "Last updated" date on this page. Continued use
+    of Chiral after an update means you are using the service under the
+    revised policy.
   </p>
 
   <h2>Contact</h2>
   <p>
-    Questions about this policy or about your linked account should go to Axiom
-    Systems community staff through the usual community channels used for Chiral
-    support.
+    Questions about this policy or about your account should go to Axiom
+    Systems community staff through the usual community channels used for
+    Chiral support.
   </p>
 
   <nav>
