@@ -70,9 +70,9 @@
     <li>Membership and moderation records: role/rank history, blacklist or Excommunicado standing, join and leave timestamps, and which invite was used to join, where that information is available to the bot</li>
     <li>Command usage needed to operate the command you ran (for example, who you targeted with a staff command)</li>
   </ul>
-  <p><strong>Message content.</strong> Chiral does not read or store message content as a general matter. Two narrow exceptions:</p>
+  <p><strong>Message content.</strong> Chiral does not read or store message content for verified members, staff, or any member holding a permission role. Two narrow exceptions, both scoped to members who have <em>not</em> linked/verified yet:</p>
   <ul>
-    <li>In channels with automated anti-spam protection, recent message metadata and content is kept in a short rolling buffer (currently up to 14 days) so that if an anti-spam trigger fires, Chiral can archive the surrounding context for a security record. Messages that are never involved in a trigger age out of this buffer and are not kept.</li>
+    <li>While anti-spam protection is active, messages from members who have not yet completed Roblox account linking (and hold no permission role) are kept in a short rolling buffer across the server (currently up to 14 days), so that if that member trips the anti-spam trap, Chiral can archive the surrounding context for a security record. The moment a member links and receives baseline access, or is granted any permission role, their messages stop being added to this buffer, and anything already buffered ages out within 14 days like normal. If anti-spam protection is turned off, nothing is logged here at all.</li>
     <li>When an anti-spam enforcement action is actually taken against a member, that member's messages from roughly the preceding 3 days are copied into a permanent security record, so staff can review what led to the action. This record is not automatically deleted.</li>
     <li>Command-only channels (for example, the account-linking channel): non-command messages are deleted on sight and are not separately stored beyond normal Discord audit purposes.</li>
   </ul>
